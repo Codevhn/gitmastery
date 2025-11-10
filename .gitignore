@@ -1,0 +1,36 @@
+# === Node / npm ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# === Build / dist ===
+dist/
+build/
+tmp/
+temp/
+.cache/
+out/
+coverage/
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === Editor ===
+.vscode/
+.idea/
+
+# === Env / credentials ===
+.env
+.env.local
+.env.production
+.env.development
+
+# === Backup ===
+*.bak
+*.tmp
+*.swp
+*~
+
