@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ✅ Metadatos básicos y viewport responsivo -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitMastery — Guía Interactiva de Git y GitHub</title>
+  <meta name="description" content="Aprende Git y GitHub de manera interactiva con GitMastery.">
+
+  <!-- ✅ Paleta tipográfica (opcional en Fase 1, útil pronto) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- ✅ Hojas de estilo (se crearán en Fase 3, hoy solo referenciamos) -->
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/theme.css">
+
+  <!-- ✅ Color de tema para navegadores móviles -->
+  <meta name="theme-color" content="#0b0f14">
+</head>
+
+<body class="app">
+  <!-- ♿️ 1. Accesibilidad: enlace para saltar directo al contenido -->
+  <a href="#content" class="skip-link" tabindex="0">Saltar al contenido</a>
+
+  <!-- 🔷 2. Encabezado global (brand + acciones de UI) -->
+  <header class="app-header" role="banner">
+    <div class="brand">
+      <button class="btn icon only mobile" id="btn-open-left" aria-label="Abrir menu de temas"
+        aria-controls="sidebar-left" aria-expanded="false">☰</button>
+      <span class="brand-subtitle">Guía de Git y GitHub</span>
+    </div>
+    <!-- TODO: sidebar-left definido más abajo -->
+
+    <nav class="app-header-action" aria-label="Acciones">
+      <!-- Estos botones se activarán en Fase 5 -->
+      <button class="btn small" id="btn-prev" disabled aria-disabled="true">◀️Anterior</button>
+      <button class="btn small" id="btn-next" disabled aria-disabled="true">Siguiente▶️</button>
+    </nav>
+  </header>
+
+  <!-- 🧭 3. Contenedor principal de la app (tres paneles) -->
+  <div class="app-shell" role="application" aria-label="Navegación  y contenido">
+    <!-- ◀️ Sidebar izquierdo: Temas principales -->
+    <aside id="sidebar-left" class="sidebar left" aria-label="Temas principales">
+      <nav class="menu menu-primary">
+        <!-- Placeholders iniciales (se poblarán en Fase 2 con router/data) -->
+        <ul>
+          <li><a href="#/" class="nav-link">Fundamentos de Git</a></li>
+          <li><a href="#/" class="nav-link">Ramas y flujos</a></li>
+          <li><a href="#/" class="nav-link">Trabajo remoto</a></li>
+          <li><a href="#/" class="nav-link">Herramientas avanzadas</a></li>
+          <li><a href="#/" class="nav-link">GitHub profesional</a></li>
+          <li><a href="#/" class="nav-link">SSH con Git</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- 📖 Panel central: Contenido dinámico -->
+    <main id="content" class="content" tabindex="-1" aria-live="polite" aria-busy="false">
+      <!-- Mensaje inicial (se reemplazará en Fase 2 por contenido cargado con fetch) -->
+      <article class="doc-block">
+        <h1>Bienvenido a GitMastery</h1>
+        <p>Selecciona un tema en la barra izquierda para comenzar, Esta guia es una SPA: el contenido se cargara
+          dinamicamente. aqui sin recargar la pagina.</p>
+        <p></p>
+      </article>
+
+      <!-- Navegación contextual (activada en Fase 5) -->
+      <nav class="pager" aria-label="Navegación contextual">
+        <button class="btn" id="pager-prev" disabled>Tema anterior</button>
+        <button class="btn" id="pager-next" disabled>Siguiente tema</button>
+      </nav>
+    </main>
+
+    <!-- ▶️ Sidebar derecho: Subtemas del tema activo -->
+    <aside id="sidebar-right" class="sidebar right" aria-label="subtemas">
+      <nav class="menu-secondary" aria-label="subtemas">
+        <!-- Placeholders iniciales (el router poblará esto según el tema) -->
+        <ul id="subtopics">
+          <li>
+            <span class="muted">Selecciona un tema para ver sus subtemas…</span>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+
+  <!-- ⚠️ Noscript de cortesía -->
+  <noscript>
+    <div class="noscript-warning">
+      Esta aplicación requiere JavaScript para funcionar correctamente.
+    </div>
+  </noscript>
+
+  <!-- 🧩 Scripts ESM (se implementarán en Fase 2 y siguientes) -->
+  <script type="module" src=".assets/js/app.js"></script>
+  <script type="module" src=".assets/js/router.js"></script>
+  <script type="module" src=".assets/js/data.js"></script>
+
+</body>
+
+</html>
