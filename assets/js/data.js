@@ -69,7 +69,70 @@ export const NAV = {
         src: '/content/fundamentals/commit-lab.html'
       }
     ]
-  }  
+  },
+  {
+    id: 'basics',
+    title: 'Operaciones básicas de Git',
+    icon: '📂',
+    Description: 'Dominar el ciclo de vida de los archivos, los comandos fundamentales y la manipulación del historial',
+
+    sections:[
+      {id:'file-lifecycle', title: 'Ciclo de vida de un archivo en Git'},
+      {id:'status', title: 'Estados: untracked, modified, staged, committed'},
+      {id:'diffs', title: 'Comparar cambios con git diff'},
+      {id: 'show', title: 'Inspeccionar cambios con git show'},
+      {id: 'log', title: 'Explorar historial con git log'},
+      {id: 'add', title: 'git add: índice y modos de adición'},
+      {id: 'commit', title: 'git commit: mensajes efectivos, amend y atomicidad'},
+      {id: 'restore', title: 'Deshacer cambios con git restore'},
+      {id: 'rm-mv', title: 'Eliminar y renombrar archivos (git rm, git mv)'},
+      {id: 'tags', title: 'Etiquetas: versiones ligeras y anotadas'},
+      {id: 'blame', title: 'git blame: autoría y auditoría de líneas'},
+      {id: 'shortlog', title: 'Resumen por autor con git shortlog'},
+      {id: 'describe', title: 'git describe: identificadores legibles'},
+      {id: 'file-history', title: 'Historial de un archivo específico'}  
+    ],
+
+    extras: [
+      {
+        id: 'index-deep-dive',
+        for: 'add',
+        title: 'Cómo funciona internamente la Staging Area',
+        src: '/content/basics/index-deep-dive.html'
+      },
+      {
+        id: 'diff-mode-lab',
+        for: 'diffs',
+        title: 'Laboratorio: word-diff, color-words y modos avanzados',
+        src: '/content/basics/diff-mode-lab.html'
+      },
+      {
+        id: 'log-filters',
+        for: 'log',
+        title: 'Guía avanzada de filtros con git log',
+        src: '/content/basics/log-filters.html'
+      },
+      {
+        id: 'undo-cheatsheet',
+        for: 'restore',
+        title: 'Cheat Sheet: undo seguro',
+        src: '/content/basics/undo-cheatsheet.html',
+        badge: '🛑'
+      },
+      {
+        id: 'tag-usage',
+        for: 'tags',
+        title: 'Buenas prácticas de etiquetado semántico',
+        src: '/content/basics/tag-usage.html'
+      },
+      {
+        id: 'blame-ethics',
+        for: 'blame',
+        title: 'Ética del uso de git blame en equipos',
+        src: '/content/basics/blame-ethics.html'
+      }
+    ]
+  },  
 ]
 
 }
