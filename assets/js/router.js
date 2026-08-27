@@ -78,7 +78,54 @@ export function router() {
    * 
    * 
    * */
-  console.log('[Router] ruta válida:', result);
+
+ // Cargar el HTML dinámico (Parte 2 completa)
+if(result?.src){
+  loadContent(result?.src);
+}else{
+  console.log('[Router] Ruta válida pero sin archivo fuente SRC');
+}
+
+  /**
+ * Carga un fragmento HTML desde /content y lo inyecta en el panel central
+ */
+
+  async function loadContent(src){
+
+    const main = document.getElementById('content');
+
+    if(!main){
+      console.error('NO se encontró el <main id="content"> en index.html');
+      return;
+    }
+
+    // Marcar estado de carga (accesibilidad)
+    main.setAtribute('aria-busy', 'true');
+
+    try{
+      const response = await fetch(src);
+      if(!response.ok){
+        throw new Error(`Error al cargar ${src}: ${response.status}`);
+      }
+      const html = await response.text();
+
+        // Inyectamos el contenido
+        main.innerHTML = html;
+    }catch(err){
+      console.log('[Router] Error al cargar contenido:', err);
+
+      // Fallback básico si algo falla
+      main.innerHTML = `
+      <div class="error"
+      <h2>Error al cargar contenido</h2>
+      <p>NO se pudo cargar: <code>${src}</code> </p>
+      </div>
+      `;
+    }
+
+    // Fin de la carga
+    main.removeAttribute('aria-busy');
+  }
 
 }
 
